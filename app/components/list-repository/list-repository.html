@@ -1,9 +1,10 @@
 <div class="row">
+  <h2>Current Page: {{vm.currentPage}}</h2>
   <div class="col-md-2 item-user__box" ng-repeat="repoItem in vm.repos.slice(((vm.currentPage-1)*vm.maxSize), ((vm.currentPage)*vm.maxSize)) track by $index">
     <item-repo repo="repoItem"></item-repo>
   </div>
   <div class="clearfix"></div>
   <div class="col-md-12">
-    <ul uib-pagination total-items="vm.repos.length" ng-model="vm.currentPage" max-size="vm.maxSize" boundary-link-numbers="true" rotate="false"></ul>
+    <ul uib-pagination items-per-page="vm.maxSize" total-items="vm.repos.length" ng-model="vm.currentPage" max-size="vm.maxSize" ng-change="vm.pageChanged()" boundary-links="true" rotate="false" class="pagination-sm"></ul>
   </div>
 </div>

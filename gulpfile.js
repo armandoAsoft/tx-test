@@ -1,16 +1,17 @@
 (function () {
   'use strict';
 
-  var gulp = require('gulp');
-  var concat = require('gulp-concat');
-  var uglify = require('gulp-uglify');
-  var cleanCSS = require('gulp-clean-css');
-  var order = require('gulp-order');
-  var embed = require('gulp-angular-embed-templates');
-  var server = require('gulp-server-livereload');
-  var runSeq = require('run-sequence');
-  var watch = require('gulp-watch');
-  var batch = require('gulp-batch');
+  var gulp                = require('gulp');
+  var concat              = require('gulp-concat');
+  var uglify              = require('gulp-uglify');
+  var cleanCSS            = require('gulp-clean-css');
+  var order               = require('gulp-order');
+  var embed               = require('gulp-angular-embed-templates');
+  var server              = require('gulp-server-livereload');
+  var runSeq              = require('run-sequence');
+  var watch               = require('gulp-watch');
+  var batch               = require('gulp-batch');
+  var historyApiFallback  = require('connect-history-api-fallback');
 
   /**
    * Gulp task run a sequence of tasks minify files
@@ -96,7 +97,8 @@
         log: 'debug',
         clientConsole: false,
         port: 9191,
-        host: 'localhost'
+        host: 'localhost',
+        middleware: function (connect, opt) {return [historyApiFallback()];}
       }));
   });
 })();

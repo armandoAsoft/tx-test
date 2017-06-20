@@ -5,16 +5,14 @@
     .module('tx.test')
     .controller('ListRepositoryController', ListRepositoryController);
 
-  ListRepositoryController.$inject = ['listRepoService', '$routeParams', '$location'];
+  ListRepositoryController.$inject = ['listRepoService', '$routeParams', 'txLocation'];
 
-  function ListRepositoryController(listRepoService, $routeParams, $location) {
+  function ListRepositoryController(listRepoService, $routeParams, txLocation) {
     var vm = this;
     vm.repos = [];
-    vm.currentPage = 1;
+    vm.currentPage = $routeParams.page;
     vm.maxSize = 4;
     vm.totalItems = vm.repos.length;
-
-    console.log('enterrrrrrrrrrrrr');
 
     vm.init = init;
     vm.getAllRepos = getAllRepos;
@@ -22,7 +20,7 @@
     vm.setPage = setPage;
 
     function pageChanged() {
-
+      txLocation.skipReload().path('/repositories/'+$routeParams.user_login+'/'+vm.currentPage).replace();
     }
 
     function init() {
@@ -30,15 +28,16 @@
     }
 
     function getAllRepos() {
-      listRepoService.getRepos($routeParams.user)
+      listRepoService.getRepos($routeParams.user_login)
         .then(function (response) {
-          console.log('list repo', vm.repos);
           vm.repos = response;
+          vm.setPage($routeParams.page);
+          vm.pageChanged();
         });
     }
     
-    function setPage() {
-      
+    function setPage(numberPage) {
+      vm.currentPage = numberPage;
     }
 
     vm.init();

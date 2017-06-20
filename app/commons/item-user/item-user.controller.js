@@ -5,16 +5,10 @@
     .module('tx.test')
     .controller('ItemUserController', ItemUserController);
 
-  ItemUserController.$inject = ['$location'];
+  ItemUserController.$inject = [];
   
-  function ItemUserController($location) {
+  function ItemUserController() {
     var vm = this;
 
-    vm.goToRepos = goToRepos;
-
-    function goToRepos(user) {
-      $location.path('/repositories').search('user', user);
-      // console.log('dederererere', $location.absUrl());
-    }
   }
 })();

@@ -5,20 +5,17 @@
     .module('tx.test')
     .config(function ($locationProvider, $routeProvider) {
 
-      /*$locationProvider.html5Mode({
-        enabled: true,
-        requireBase: false
-      });*/
-
       $routeProvider
         .when('/users', {
           templateUrl: 'components/list-user/list-user.html'
         })
-        .when('/repositories/:user', {
+        .when('/repositories/:user_login/:page', {
           templateUrl: 'components/list-repository/list-repository.html',
           controller: 'ListRepositoryController',
-          controllerAs: 'vm'
+          controllerAs: 'vm',
+          reloadOnSearch: false
         })
         .otherwise({redirectTo: '/users'});
+
     });
 })();
