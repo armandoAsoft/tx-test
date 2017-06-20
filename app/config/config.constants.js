@@ -2,6 +2,6 @@
   'use strict';
 
   angular
-    .module('tx.github')
+    .module('tx.test')
     .constant('TX_TEST_URL', {url: 'https://api.github.com'});
 })();
