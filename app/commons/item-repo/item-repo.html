@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-md-12">
+    <h4>{{vm.repo.name}}</h4>
+  </div>
+  <div class="col-md-12">
+    <a href="{{vm.repo.html_url}}">GitHub page</a>
+  </div>
+  <div class="col-md-12">
+    <p>{{vm.repo.description}}</p>
+  </div>
+  <div class="col-md-12">Number of:</div>
+  <div class="col-md-12">
+    <ul>
+      <li>Issues: {{vm.repo.open_issues}}</li>
+      <li>Open Issues:{{vm.repo.open_issues_count}} </li>
+      <li>Forks: {{vm.repo.forks_count}}</li>
+    </ul>
+  </div>
+</div>

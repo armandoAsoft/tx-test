@@ -12,7 +12,7 @@
         <a href="{{vm.user.html_url}}" target="_blank">My page</a>
       </div>
       <div class="raw">
-        <a href="{{vm.user.repos_url}}">My repositories</a>
+        <a href="#" ng-click="vm.goToRepos(vm.user.login)">My repositories</a>
       </div>
     </div>
   </div>

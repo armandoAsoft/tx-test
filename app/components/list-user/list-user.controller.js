@@ -5,9 +5,9 @@
     .module('tx.test')
     .controller('ListUserController', ListUserController);
 
-  ListUserController.$inject = ['listUserService'];
+  ListUserController.$inject = ['listUserService', '$location'];
   
-  function ListUserController(listUserService) {
+  function ListUserController(listUserService, $location) {
     var vm = this;
     vm.users = [];
     vm.currentPage = 1;

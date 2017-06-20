@@ -14,7 +14,7 @@
         .when('/', {
           templateUrl: 'components/list-user/list-user.html'
         })
-        .when('/item-list-repository', {
+        .when('/item-list-repository/:user', {
           templateUrl: 'components/list-repository/list-repository.html'
         })
         .otherwise({redirectTo: '/'});
