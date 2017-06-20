@@ -27,3 +27,7 @@ The application automatically will open the default browser.
 
 When we run the command: gulp build the minified files are copied inside the folder 
 /dist.
+
+## Improvements
+
+It is necessary to improve the styles since they only handled me very basic classes of design
