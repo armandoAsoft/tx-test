@@ -19,7 +19,7 @@
    *   $ gulp build --gulpfile gulpfile.js
    */
   gulp.task('build', function () {
-    runSeq('minify-js', 'web-server', 'watch');
+    runSeq('minify-js', 'minify-css', 'web-server', 'watch');
   });
 
   /**

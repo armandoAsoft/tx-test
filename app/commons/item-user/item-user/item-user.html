@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-md-5">
+    <img ng-if="vm.user.avatar_url !== undefined || vm.user.avatar_url !== ''" src="{{vm.user.avatar_url}}" width="90%" class="item-user__img">
+    <img ng-if="vm.user.avatar_url === undefined || vm.user.avatar_url === ''" src="/app/assets/img/default.png" width="90%" class="item-user__img">
+  </div>
+  <div class="col-md-5 item-user__name">
+    <div class="col-md-12">
+      {{vm.user.login}}
+    </div>
+    <div class="item-user__links">
+      <div class="raw">
+        <a href="{{vm.user.html_url}}" target="_blank">My page</a>
+      </div>
+      <div class="raw">
+        <a href="{{vm.user.repos_url}}">My repositories</a>
+      </div>
+    </div>
+  </div>
+</div>

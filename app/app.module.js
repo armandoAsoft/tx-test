@@ -2,6 +2,6 @@
   'use strict';
 
   angular
-    .module('tx.test', ['ngRoute']);
+    .module('tx.test', ['ui.bootstrap', 'ngRoute']);
 
 })();

@@ -1,5 +1,10 @@
 <div class="row" ng-controller="ListUserController as vm">
-  <div class="col-md-3" ng-repeat="userItem in vm.users">
-    {{userItem.login}}
+  <div class="col-md-2 item-user__box" ng-repeat="userItem in vm.users.slice(((vm.currentPage-1)*vm.maxSize), ((vm.currentPage)*vm.maxSize)) track by $index">
+    <item-user user="userItem"></item-user>
   </div>
+  <div class="col-md-2 item-user__button">
+    <button class="btn btn-default" ng-click="vm.setPage(1)">Next</button>
+  </div>
+  <div class="clearfix"></div>
+  <ul ng-show="false" uib-pagination total-items="vm.users.length" ng-model="vm.currentPage" ng-change="vm.pageChanged()"></ul>
 </div>
