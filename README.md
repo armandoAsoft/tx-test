@@ -30,4 +30,4 @@ When we run the command: gulp build the minified files are copied inside the fol
 
 ## Improvements
 
-It is necessary to improve the styles since they only handled me very basic classes of design
+It is necessary to improve the styles, it handled with very basic classes of design
