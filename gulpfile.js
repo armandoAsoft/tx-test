@@ -92,7 +92,7 @@
       .pipe(server({
         livereload: false,
         directoryListing: false,
-        open: false,
+        open: true,
         log: 'debug',
         clientConsole: false,
         port: 9191,

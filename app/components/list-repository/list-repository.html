@@ -1,4 +1,4 @@
-<div class="row" ng-controller="ListRepositoryController as vm">
+<div class="row">
   <div class="col-md-2 item-user__box" ng-repeat="repoItem in vm.repos.slice(((vm.currentPage-1)*vm.maxSize), ((vm.currentPage)*vm.maxSize)) track by $index">
     <item-repo repo="repoItem"></item-repo>
   </div>

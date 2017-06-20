@@ -13,8 +13,8 @@
     vm.goToRepos = goToRepos;
 
     function goToRepos(user) {
-      console.log('dededede', user);
-      $location.path('/item-list-repository/'+user);
+      $location.path('/repositories').search('user', user);
+      // console.log('dederererere', $location.absUrl());
     }
   }
 })();
